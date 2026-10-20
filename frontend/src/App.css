@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f0f1f4;
+  background: #101116;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --cc-bg: #101116;
+  --cc-panel: #171920;
+  --cc-raised: #1d2028;
+  --cc-border: #2c2f39;
+  --cc-text: #f0f1f4;
+  --cc-muted: #9094a2;
+  --cc-coral: #ff795f;
+  --cc-mint: #92efc2;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--cc-bg); }
+button, input, textarea { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+#root { min-height: 100vh; }
+
+.cc-app {
+  display: grid;
+  grid-template-columns: 76px 340px minmax(0, 1fr);
+  height: 100dvh;
+  min-height: 560px;
+  overflow: hidden;
+  color: var(--cc-text);
+  background:
+    radial-gradient(ellipse at 78% 0%, rgba(255,121,95,.055), transparent 34%),
+    var(--cc-bg);
+  animation: cc-appear .45s ease both;
+}
+.cc-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 10px 15px;
+  background: #13141a;
+  border-right: 1px solid var(--cc-border);
+  z-index: 3;
+}
+.cc-logo {
+  width: 42px; height: 42px; border-radius: 15px;
+  display: grid; place-items: center; margin-bottom: 6px;
+  color: #171920; background: var(--cc-coral);
+  box-shadow: 0 7px 25px #ff795f24;
+}
+.cc-logo svg { font-size: 23px; }
+.cc-rail > .MuiDivider-root { width: 28px; border-color: var(--cc-border); margin-bottom: 5px; }
+.cc-rail .MuiIconButton-root { width: 44px; height: 44px; color: var(--cc-muted); border-radius: 14px; }
+.cc-rail .MuiIconButton-root:hover { color: var(--cc-text); background: #ffffff0a; transform: translateY(-1px); }
+.cc-rail .cc-rail-button.is-active { color: var(--cc-coral); background: #ff795f17; box-shadow: inset 0 0 0 1px #ff795f1e; }
+.cc-rail-bottom { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.cc-self-avatar { width: 34px !important; height: 34px !important; background: var(--cc-mint) !important; color: #13251d !important; font-size: 11px !important; font-weight: 800 !important; }
+
+.cc-people {
+  display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+  background: var(--cc-panel); border-right: 1px solid var(--cc-border);
+}
+.cc-sidebar-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 27px 22px 19px; }
+.cc-eyebrow { color: var(--cc-mint) !important; letter-spacing: 1.7px !important; font-size: 9px !important; font-weight: 800 !important; }
+.cc-heading { margin-top: 5px !important; font: 800 25px/1.2 'Manrope', sans-serif !important; letter-spacing: -.8px !important; }
+.cc-new-button { background: var(--cc-raised) !important; color: var(--cc-coral) !important; border: 1px solid var(--cc-border) !important; }
+.cc-search { padding: 0 19px 20px; }
+.cc-search .MuiOutlinedInput-root, .cc-message-input .MuiOutlinedInput-root {
+  border-radius: 13px; background: #101116; color: var(--cc-text);
+}
+.cc-search .MuiOutlinedInput-notchedOutline, .cc-message-input .MuiOutlinedInput-notchedOutline { border-color: var(--cc-border); }
+.cc-search .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+.cc-message-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline { border-color: #515563; }
+.cc-search .MuiInputBase-input { font-size: 12px; padding-top: 12px; padding-bottom: 12px; }
+.cc-search .MuiInputAdornment-root { color: var(--cc-muted); }
+.cc-section-label { display: flex; align-items: center; justify-content: space-between; padding: 3px 22px 11px; color: var(--cc-muted); font-size: 9px !important; font-weight: 800 !important; letter-spacing: 1.2px; }
+.cc-section-label span { color: var(--cc-coral); }
+.cc-chat-list { padding: 0 10px; overflow-y: auto; }
+.cc-chat-row { display: flex; align-items: center; gap: 12px; padding: 13px 12px; margin-bottom: 3px; cursor: pointer; background: transparent !important; border: 1px solid transparent; transition: background .2s, border-color .2s, transform .2s; }
+.cc-chat-row:hover { background: #ffffff06 !important; transform: translateX(2px); }
+.cc-chat-row.is-selected { background: #ff795f0d !important; border-color: #ff795f25; }
+.cc-chat-row-content { flex: 1; min-width: 0; }
+.cc-row-title, .cc-row-preview { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.cc-person-name { color: var(--cc-text) !important; font-size: 12px !important; font-weight: 700 !important; }
+.cc-time { color: var(--cc-muted) !important; font-size: 10px !important; }
+.cc-preview-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--cc-muted) !important; font-size: 11px !important; margin-top: 5px !important; }
+.cc-row-preview .MuiBadge-badge { position: static; transform: none; min-width: 18px; height: 18px; font-size: 10px; background: var(--cc-coral); color: #19151a; font-weight: 800; }
+.cc-sidebar-footer { display: flex; align-items: center; gap: 8px; padding: 14px 20px; margin-top: auto; border-top: 1px solid var(--cc-border); color: var(--cc-muted); font-size: 10px; }
+.cc-status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cc-mint); box-shadow: 0 0 10px #92efc255; }
+.cc-results { overflow-y: auto; padding: 0 12px 20px; }
+.cc-person-result { display: flex; align-items: center; gap: 11px; padding: 12px 10px; border-bottom: 1px solid #ffffff09; }
+.cc-result-text { flex: 1; min-width: 0; }
+.cc-result-text .cc-time { display: block; margin-top: 4px; }
+.cc-person-result .MuiButton-root { min-width: 65px; font-size: 11px; }
+.cc-request { border-bottom: 1px solid #ffffff0b; padding-bottom: 12px; }
+.cc-request-actions { display: flex; gap: 8px; padding-left: 10px; }
+.cc-request-actions .MuiButton-root { flex: 1; font-size: 11px; }
+.cc-empty { color: var(--cc-muted) !important; padding: 24px 12px; text-align: center; font-size: 12px !important; line-height: 1.6 !important; }
+.cc-hint { display: block; color: var(--cc-muted); font-size: 10px !important; line-height: 1.6 !important; padding: 12px; }
+
+.cc-conversation-panel { display: flex; flex-direction: column; position: relative; min-width: 0; min-height: 0; background: transparent; }
+.cc-conversation-header { min-height: 83px; display: flex; align-items: center; gap: 12px; padding: 15px 28px; border-bottom: 1px solid var(--cc-border); background: #171920c9; backdrop-filter: blur(18px); }
+.cc-header-person { flex: 1; min-width: 0; }
+.cc-header-person .cc-time { display: block; margin-top: 4px; }
+.cc-header-actions { display: flex; gap: 4px; }
+.cc-header-actions .MuiIconButton-root { color: var(--cc-muted); }
+.cc-back-button { display: none !important; }
+.cc-menu { position: absolute; right: 24px; top: 68px; z-index: 5; padding: 8px; background: #20232c !important; border: 1px solid var(--cc-border); }
+.cc-menu .MuiButton-root { display: block; color: var(--cc-text); font-size: 11px; }
+.cc-menu .MuiButton-root:hover { background: #ffffff09; }
+.cc-encryption-note { align-self: center; display: flex; align-items: center; gap: 7px; margin: 20px 12px 5px; padding: 8px 13px; border: 1px solid #92efc21c; border-radius: 30px; background: #92efc20a; color: var(--cc-mint); }
+.cc-encryption-note .MuiTypography-root { font-size: 10px; }
+.cc-message-list { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow-y: auto; gap: 13px; padding: 24px clamp(18px, 5vw, 75px); }
+.cc-day-label { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--cc-muted); font-size: 9px !important; font-weight: 800 !important; letter-spacing: 1.5px; margin: 4px 0 12px !important; }
+.cc-day-label span { width: 35px; height: 1px; background: var(--cc-border); }
+.cc-message-row { display: flex; justify-content: flex-start; animation: cc-message-in .22s ease both; }
+.cc-message-row--mine { justify-content: flex-end; }
+.cc-message-bubble { max-width: min(75%, 490px); padding: 11px 14px 8px; border-radius: 4px 16px 16px 16px; background: #20232c; border: 1px solid #ffffff08; }
+.cc-message-bubble--mine { border-radius: 16px 4px 16px 16px; background: #3a2628; border-color: #ff795f21; }
+.cc-message-text { color: var(--cc-text); font-size: 12px !important; line-height: 1.65 !important; overflow-wrap: anywhere; white-space: pre-wrap; }
+.cc-message-meta { display: flex; align-items: center; justify-content: flex-end; gap: 5px; margin-top: 5px; color: var(--cc-muted); }
+.cc-message-meta .MuiTypography-root { font-size: 9px; }
+.cc-message-meta > span { display: flex; color: var(--cc-mint); font-size: 13px; }
+.cc-delete-message { opacity: 0; width: 23px !important; height: 23px !important; color: var(--cc-muted) !important; }
+.cc-message-bubble:hover .cc-delete-message, .cc-delete-message:focus-visible { opacity: 1; }
+.cc-composer { display: flex; align-items: flex-end; gap: 8px; margin: 10px 24px 0; padding: 9px; position: relative; border: 1px solid var(--cc-border); border-radius: 18px; background: #171920; box-shadow: 0 12px 45px #0002; }
+.cc-composer > .MuiIconButton-root { color: var(--cc-muted); margin-bottom: 1px; }
+.cc-message-input { flex: 1; }
+.cc-message-input .MuiOutlinedInput-root { background: transparent; padding: 7px 0; }
+.cc-message-input .MuiOutlinedInput-notchedOutline { border: 0 !important; }
+.cc-message-input .MuiInputBase-input { font-size: 12px; line-height: 1.5; }
+.cc-send-button { min-width: 83px !important; min-height: 42px !important; display: flex; gap: 7px; box-shadow: none !important; }
+.cc-send-button svg { font-size: 17px; }
+.cc-composer-hint { text-align: center; color: #656977; font-size: 9px !important; padding: 8px 10px 12px; }
+.cc-emoji-popover { position: absolute; bottom: 67px; left: 7px; z-index: 6; display: grid; grid-template-columns: repeat(4, 40px); padding: 7px; background: #20232c !important; border: 1px solid var(--cc-border); }
+.cc-emoji-popover .MuiIconButton-root { font-size: 20px; }
+.cc-emoji-popover .MuiIconButton-root:hover { background: #ff795f1b; }
+.cc-welcome-panel { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; gap: 12px; background: radial-gradient(ellipse at center, #ff795f0b, transparent 55%); }
+.cc-welcome-mark { width: 80px; height: 80px; display: grid; place-items: center; border: 1px solid #ff795f2b; border-radius: 27px; background: #ff795f10; color: var(--cc-coral); animation: cc-float 4s ease-in-out infinite; }
+.cc-welcome-mark svg { font-size: 36px; }
+.cc-welcome-panel h4 { font: 800 clamp(25px, 3vw, 38px)/1.2 'Manrope', sans-serif; letter-spacing: -1.5px; }
+.cc-welcome-panel > .MuiTypography-root:not(.MuiTypography-h4) { color: var(--cc-muted); font-size: 12px; margin-bottom: 8px; }
+.cc-welcome-panel .MuiButton-root { padding: 10px 18px; }
+
+@keyframes cc-appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes cc-message-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes cc-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+@media (max-width: 1050px) {
+  .cc-app { grid-template-columns: 66px 300px minmax(0, 1fr); }
+  .cc-sidebar-heading { padding-left: 17px; padding-right: 17px; }
+  .cc-message-list { padding-left: 24px; padding-right: 24px; }
+}
+@media (max-width: 760px) {
+  .cc-app { grid-template-columns: 56px minmax(0, 1fr); min-height: 0; }
+  .cc-rail { grid-column: 1; grid-row: 1; padding: 13px 5px; gap: 10px; }
+  .cc-rail .MuiIconButton-root { width: 40px; height: 40px; }
+  .cc-logo { width: 38px; height: 38px; border-radius: 13px; }
+  .cc-people { grid-column: 2; grid-row: 1; }
+  .cc-conversation-panel { display: none; grid-column: 2; grid-row: 1; }
+  .cc-conversation-panel.cc-mobile-chat-open { display: flex; }
+  .cc-people.cc-mobile-hide { display: none; }
+  .cc-sidebar-heading { padding: 20px 14px 15px; }
+  .cc-heading { font-size: 22px !important; }
+  .cc-search { padding: 0 12px 14px; }
+  .cc-section-label { padding-left: 15px; padding-right: 15px; }
+  .cc-chat-list { padding: 0 5px; }
+  .cc-chat-row { padding: 11px 8px; gap: 9px; }
+  .cc-conversation-header { min-height: 68px; padding: 10px 12px; gap: 9px; }
+  .cc-back-button { display: inline-flex !important; }
+  .cc-message-list { padding: 16px 12px; gap: 10px; }
+  .cc-message-bubble { max-width: 88%; }
+  .cc-composer { margin: 7px 8px 0; gap: 3px; padding: 6px; border-radius: 14px; }
+  .cc-send-button { min-width: 43px !important; width: 43px; padding: 0 !important; }
+  .cc-send-button span { display: none; }
+  .cc-composer-hint { font-size: 8px !important; padding-bottom: 8px; }
+  .cc-encryption-note { margin-top: 12px; }
+  .cc-person-result { gap: 8px; padding: 10px 5px; }
+  .cc-request-actions { padding-left: 4px; }
+}
+@media (max-width: 390px) {
+  .cc-app { grid-template-columns: 48px minmax(0, 1fr); }
+  .cc-rail { padding-left: 3px; padding-right: 3px; }
+  .cc-rail .MuiIconButton-root { width: 37px; height: 37px; }
+  .cc-logo { width: 34px; height: 34px; }
+  .cc-sidebar-heading { padding-left: 10px; padding-right: 10px; }
+  .cc-person-name { font-size: 11px !important; }
+  .cc-time { font-size: 9px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
