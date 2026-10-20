@@ -43,3 +43,7 @@ Thumbs.db
 *.tmp
 *.bak
 '@ | Set-Content .gitignore -Encoding utf8
+# Local backup files
+frontend/src/*.backup-*
+frontend/src/*.before-*
+frontend/src/*.bak
