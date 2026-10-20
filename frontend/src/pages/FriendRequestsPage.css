@@ -1,0 +1,62 @@
+
+.friend-requests-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.friend-requests-page__header {
+  margin-bottom: 24px;
+}
+
+.friend-requests-page__header h1 {
+  color: var(--color-text);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.friend-requests-page__header p {
+  margin-top: 7px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.friend-requests-page__tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.friend-requests-page__tabs button {
+  padding: 12px 2px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.friend-requests-page__tabs button.is-active {
+  border-bottom-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.friend-requests-page__error {
+  margin-bottom: 16px;
+  color: var(--color-danger);
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .friend-requests-page {
+    padding: 22px 14px;
+  }
+
+  .friend-requests-page__header h1 {
+    font-size: 21px;
+  }
+}

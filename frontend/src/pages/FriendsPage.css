@@ -1,0 +1,45 @@
+
+.friends-page {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.friends-page__header {
+  margin-bottom: 24px;
+}
+
+.friends-page__header h1 {
+  color: var(--color-text);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.friends-page__header p {
+  margin-top: 7px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.friends-page__loading {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.friends-page__error {
+  margin-bottom: 16px;
+  color: var(--color-danger);
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .friends-page {
+    padding: 22px 14px;
+  }
+
+  .friends-page__header h1 {
+    font-size: 21px;
+  }
+}

@@ -1,0 +1,53 @@
+
+.search-users-page {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.search-users-page__header {
+  margin-bottom: 24px;
+}
+
+.search-users-page__header h1 {
+  color: var(--color-text);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.search-users-page__header p {
+  margin-top: 8px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.search-users-page__results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.search-users-page__loading {
+  display: flex;
+  justify-content: center;
+  padding: 45px;
+}
+
+.search-users-page__error {
+  margin-top: 16px;
+  color: var(--color-danger);
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .search-users-page {
+    padding: 22px 14px;
+  }
+
+  .search-users-page__header h1 {
+    font-size: 21px;
+  }
+}
