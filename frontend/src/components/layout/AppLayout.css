@@ -1,0 +1,37 @@
+
+.app-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: clip;
+  background: var(--color-bg, #13141a);
+  color: var(--color-text, #f4f4f7);
+}
+
+.app-layout__main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.app-layout__content {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+@media (min-width: 769px) {
+  .app-layout__main {
+    min-height: 100dvh;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-layout__content {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}

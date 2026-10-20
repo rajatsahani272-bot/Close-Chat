@@ -1,0 +1,42 @@
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-flex {
+  display: flex;
+}
+
+.u-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.u-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.u-min-w-0 {
+  min-width: 0;
+}
+
+.u-full-width {
+  width: 100%;
+}
+
+.u-text-muted {
+  color: var(--color-text-muted);
+}
+
+.u-text-danger {
+  color: var(--color-danger);
+}
+
+.u-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

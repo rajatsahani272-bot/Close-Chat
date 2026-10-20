@@ -1,0 +1,49 @@
+
+.mobile-header {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 58px;
+    padding: 0 15px;
+    padding-top: env(safe-area-inset-top, 0px);
+    border-bottom: 1px solid var(--color-border, #30313c);
+    background: var(--color-panel, #20212a);
+  }
+
+  .mobile-header__menu {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--color-text, #f4f4f7);
+  }
+
+  .mobile-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text, #f4f4f7);
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .mobile-header__brand svg {
+    color: var(--color-accent, #8b7cf6);
+  }
+
+  .mobile-header__spacer {
+    flex: 1;
+  }
+}

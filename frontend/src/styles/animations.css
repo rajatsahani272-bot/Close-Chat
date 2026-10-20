@@ -1,0 +1,31 @@
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.u-fade-in {
+  animation: fade-in 180ms ease both;
+}
+
+.u-spin {
+  animation: spin 900ms linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .u-fade-in,
+  .u-spin {
+    animation: none;
+  }
+}

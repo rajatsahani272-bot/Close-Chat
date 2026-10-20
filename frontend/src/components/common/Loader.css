@@ -1,0 +1,39 @@
+
+.ui-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px;
+  color: var(--color-text-secondary, #a2a3b2);
+  font-size: 13px;
+}
+
+.ui-loader--page {
+  min-height: 100dvh;
+}
+
+.ui-loader__spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border, #30313c);
+  border-top-color: var(--color-accent, #8b7cf6);
+  border-radius: 50%;
+  animation: ui-loader-spin 700ms linear infinite;
+}
+
+.ui-loader__label {
+  line-height: 1.4;
+}
+
+@keyframes ui-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-loader__spinner {
+    animation-duration: 1.8s;
+  }
+}

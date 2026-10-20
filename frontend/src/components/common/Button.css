@@ -1,0 +1,110 @@
+
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease,
+    color 160ms ease, transform 160ms ease;
+}
+
+.ui-button:focus-visible {
+  outline: 2px solid var(--color-accent, #8b7cf6);
+  outline-offset: 3px;
+}
+
+.ui-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ui-button--primary {
+  background: var(--color-accent, #8b7cf6);
+  color: #ffffff;
+}
+
+.ui-button--primary:hover:not(:disabled) {
+  background: var(--color-accent-hover, #7969e8);
+}
+
+.ui-button--secondary {
+  background: var(--color-surface, #1c1d25);
+  border-color: var(--color-border, #30313c);
+  color: var(--color-text, #f4f4f7);
+}
+
+.ui-button--secondary:hover:not(:disabled) {
+  background: var(--color-surface-hover, #272832);
+}
+
+.ui-button--ghost {
+  background: transparent;
+  color: var(--color-text-secondary, #a2a3b2);
+}
+
+.ui-button--ghost:hover:not(:disabled) {
+  background: var(--color-surface-hover, #272832);
+  color: var(--color-text, #f4f4f7);
+}
+
+.ui-button--danger {
+  background: #3b2026;
+  color: #ffb8c0;
+  border-color: #583038;
+}
+
+.ui-button--danger:hover:not(:disabled) {
+  background: #51272f;
+}
+
+.ui-button--sm {
+  min-height: 34px;
+  padding: 0 11px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.ui-button--md {
+  min-height: 42px;
+}
+
+.ui-button--lg {
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+.ui-button__spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: ui-button-spin 650ms linear infinite;
+}
+
+@keyframes ui-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-button {
+    transition: none;
+  }
+
+  .ui-button__spinner {
+    animation-duration: 1.5s;
+  }
+}
