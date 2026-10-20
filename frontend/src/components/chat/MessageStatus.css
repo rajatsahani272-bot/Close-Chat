@@ -1,0 +1,18 @@
+
+.message-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.message-status--sending,
+.message-status--sent,
+.message-status--delivered {
+  color: var(--color-text-muted);
+}
+
+.message-status--read {
+  color: var(--color-accent);
+}
