@@ -1,0 +1,12 @@
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.register-form__error {
+  color: var(--color-danger);
+  font-size: 12px;
+  line-height: 1.5;
+}

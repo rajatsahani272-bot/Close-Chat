@@ -1,0 +1,9 @@
+
+.auth-form-field {
+  width: 100%;
+  min-width: 0;
+}
+
+.auth-form-field + .auth-form-field {
+  margin-top: 17px;
+}

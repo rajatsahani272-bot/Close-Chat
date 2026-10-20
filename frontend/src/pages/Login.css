@@ -1,0 +1,12 @@
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-form__error {
+  color: var(--color-danger);
+  font-size: 12px;
+  line-height: 1.5;
+}
